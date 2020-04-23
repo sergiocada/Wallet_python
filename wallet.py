@@ -5,7 +5,7 @@ def hash_read(usuario):
     return hashlib.sha256(usuario.encode('utf-8')).hexdigest()
 
 def agregar_usuario(usuario):
-    archivo_lista = open("proyecto.txt","a")
+    archivo_lista = open("proyecto.txt","w")
     archivo_lista.write("{}\n " .format(usuario) )
     archivo_lista.close()
 
