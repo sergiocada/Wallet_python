@@ -1,0 +1,17 @@
+{% block title %}{% endblock %}
+{% block content %}
+    <h1>Bienvenido, {{ usuario.name }}! </h1>
+    <h2>¿Quieres ver tu saldo? </h2><button onclick="window.location.href='/saldo'">Ver Saldo</button>
+    <h3>Para hacer alguna trasacción ingrese los siguientes datos:</h3>
+    <form action="" method="post">
+        <label for="hash_origen">Hash de origen: </label>
+        <input type="text" id="dir1" name="dir1" /><br>
+        <label for="hash_destino">Hash de destino: </label>
+        <input type="text" id="dir2" name="dir2" /><br>
+        <label for="dinero">Dinero: </label>
+        <input type="text" id="dinero" name="dinero" /><br>
+        <br>
+        <input type="submit" id="send-signup" name="signup" value="Enviar" />
+        <p><strong> estado de la transaccion es  {{usuario.transaccion}}</strong></p>
+    </form>
+{% endblock %}
