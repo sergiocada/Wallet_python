@@ -1,17 +1,60 @@
 {% block title %}{% endblock %}
 {% block content %}
-    <h1>Bienvenido, {{ usuario.name }} </h1>
-    <h2>¿Quieres ver tu saldo? </h2><button onclick="window.location.href='/saldo'">Ver Saldo</button>
-    <h3>Para hacer alguna trasacción ingrese los siguientes datos:</h3>
-    <form action="" method="post">
-        <label for="hash_origen">Hash de origen: </label>
-        <input type="text" id="dir1" name="dir1" /><br>
-        <label for="hash_destino">Hash de destino: </label>
-        <input type="text" id="dir2" name="dir2" /><br>
-        <label for="dinero">Dinero: </label>
-        <input type="text" id="dinero" name="dinero" /><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel=”StyleSheet” href=”estilo.css” type=”text/css”>
+    <title>Inicio</title>
+    <style>
+        body{
+            margin-left: 85px;
+            margin-right: 85px;   
+        };
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-2">Wallet</h1>
+        <h3 class="lead">Tu hash es :  {{ usuario.name }} </h3>
+    </div>    
+    <hr>
+    <br>
+    <div class="text-center">
+        <h4 class="lead">¿Quieres ver tu saldo? </h4>
         <br>
-        <input type="submit" id="send-signup" name="signup" value="Enviar" />
-        <p><strong> estado de la transaccion es  {{usuario.transaccion}}</strong></p>
+        <button onclick="window.location.href='/saldo'" class="btn btn-primary">Ver Saldo</button>
+    </div>
+    <br>
+    <p class="lead">Para hacer alguna trasacción ingrese los siguientes datos:</p>
+    <br>
+    <form action="" method="post">
+        <div class="form-group">
+            <label class="lead" for="hash_origen">Hash de Origen: </label>
+            <input type="text" id="dir1" name="dir1" class="form-control" aria-describedby="dir1" placeholder="Ingrese el Hash"/>
+            <small id="dir1" class="form-text text-muted">ingrese hash.</small>
+        </div>
+        <div class="form-group">
+            <label class="lead" for="hash_destino">Hash Destino: </label>
+            <input type="text" id="dir2" name="dir2" class="form-control" aria-describedby="dir2" placeholder="Ingrese el Hash Destino">
+            <small id="dir2" class="form-text text-muted">ingrese hash Destino.</small>
+        </div>
+        <div class="lead" class="form-group">
+            <label for="dinero">Dinero</label>
+            <input type="text" id="dinero" name="dinero" class="form-control" aria-describedby="dinero" placeholder="Escribe la cantidad de dinero"/>
+            <small id="dinero" class="form-text text-muted">Digite el monto.</small>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" id="send-signup" name="signup" value="Enviar">Enviar</button>
     </form>
+    <br>
+    <br>
 {% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
