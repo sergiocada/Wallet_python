@@ -1,5 +1,5 @@
 from flask import Flask,render_template, request, redirect, url_for,jsonify
-import hashlib,datetime,os,json
+import hashlib,datetime,os,json, requests
 from validacion import wallet
 from Transaccion import transaccion
 
@@ -118,4 +118,4 @@ def transaccion():
     return render_template('inicio.html', usuario = usuario)
 
 if __name__ == '__main__':
-    app.run(debug=True,port=4000)
+    app.run(host='142.44.246.66',debug=True,port=4000)
