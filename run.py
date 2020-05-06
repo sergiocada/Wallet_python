@@ -1,5 +1,5 @@
 from flask import Flask,render_template, request, redirect, url_for,jsonify
-import hashlib,datetime,os,json, requests
+import hashlib,datetime,os,json,requests
 from validacion import wallet
 from Transaccion import transaccion
 
